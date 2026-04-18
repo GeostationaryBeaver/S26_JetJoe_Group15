@@ -119,18 +119,19 @@ m_dot_f = f * m_dot_a
 
 # Spec Thrust
 
-F = 62.3  # N
+F_model = m_dot_a * (1 + f) * c6
 
 # Specific Thrust = F / m_dot_a
-specific_thrust = F / m_dot_a
+a0 = np.sqrt(gamma * R * 298.15)
+specific_thrust_nd = F_model / (m_dot_a * a0)
 
 #SFC
 
 # SFC = m_dot_f / F
-SFC = m_dot_f / F
+SFC = m_dot_f / F_model
 
 #Outputs
-
+print("c6=", c6)
 print("Tt4 =", Tt4)
 print("Tt3 =", Tt3)
 print("f =", f)
@@ -138,5 +139,5 @@ print("pi_c =", pi_c)
 print("m_dot_t =", m_dot_t)
 print("m_dot_a =", m_dot_a)
 print("m_dot_f =", m_dot_f)
-print("Specific Thrust =", specific_thrust)
+print("Specific Thrust =", specific_thrust_nd)
 print("SFC =", SFC)
