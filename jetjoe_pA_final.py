@@ -17,7 +17,7 @@ class Inputs:
     R: float = 287.0
 
     # Efficiencies
-    eta_comp: float = 0.75
+    eta_comp: float = 0.73
     eta_turb: float = 0.89
     eta_mech: float = 0.99
     eta_p_comb: float = 1
